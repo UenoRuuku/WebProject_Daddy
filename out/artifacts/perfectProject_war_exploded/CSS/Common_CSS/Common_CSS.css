@@ -1,0 +1,31 @@
+.d-see{
+    display: none;
+}
+body {
+    background-color: #343a40 !important;
+}
+p1 {
+    font-family: "Motiva Sans", Sans-serif, serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0 10px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    padding-top: 2px;
+}
+.inverse-a:hover {
+    cursor: pointer;
+    color: white;
+}
+span {
+    color: #d9dadd;
+    font-family: "Motiva Sans", Sans-serif;
+    font-size: 13px;
+}
+.common-a{
+    color:inherit;
+}
+.common-a:hover{
+    text-decoration: none;
+}

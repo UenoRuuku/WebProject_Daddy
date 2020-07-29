@@ -1,0 +1,89 @@
+/* 滑动箭头的动画 */
+.chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+}
+.chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+}
+.chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+}
+.chevron:before,
+.chevron:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #fff;
+}
+.chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+}
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+}
+@keyframes move {
+    25% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+}
+
+.text-input {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+    box-shadow: 1px 1px 0px #45556c;
+    padding: 5px;
+    margin: 4px 0;
+    width: 70%;
+}
+
+.form-container {
+    padding-left: 40px;
+    padding-bottom: 40px;
+    padding-top: 30px;
+    background: transparent;
+}
+
+.link {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.arrow_down {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.btn-login {
+    background: #799905;
+    background: -webkit-linear-gradient(top, #799905 5%, #536904 95%);
+    background: linear-gradient(to bottom, #799905 5%, #536904 95%);
+}
