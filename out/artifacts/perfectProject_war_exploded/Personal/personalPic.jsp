@@ -107,7 +107,15 @@
         </div>
     </div>
 </div>
+<div style="position:fixed;bottom:50px;right:50px;">
 
+    <a href="#" onclick="backToTop()">
+        <p1>
+            点我返回上层
+        </p1>
+    </a>
+</div>
 
+<script src="../JS/Common_JS/Common_JS.js"></script>
 </body>
 </html>

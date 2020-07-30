@@ -42,7 +42,7 @@
 </div>
 
 <div style="position:fixed;bottom:50px;right:50px;">
-    <p1>当前页数: <span id="currentPage"></span>/</p1>
+    <p1>当前显示页数: <span id="currentPage"></span>/</p1>
     <p1>总页数：<span id="totalPage"></span></p1>
     <br>
     <a href="#" onclick="backToTop()">

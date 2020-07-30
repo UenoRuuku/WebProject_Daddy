@@ -117,10 +117,10 @@
                             <span for="file">file</span>
                             <br/>
                             <input allowedFileTypes="['jpg','png','jpeg']" id="f_upload" type="file" name="file"
-                                   class="file"/>
+                                   class="file" required/>
                         </div>
                         <br/>
-                        <button data-toggle="modal" data-target="#myModal" class="btn btn-success" style="width:100%">
+                        <button type="button"   data-toggle="modal" data-target="#myModal" class="btn btn-success" style="width:100%">
                             Upload
                         </button>
                     </div>

@@ -105,6 +105,7 @@
                             type="password"
                             class="text-input"
                             id="registerRePassword"
+                            name="registerRePassword"
                             placeholder="enter your password here again" required
                     />
                 </div>

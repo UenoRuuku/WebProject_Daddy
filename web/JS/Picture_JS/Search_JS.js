@@ -1,6 +1,7 @@
 var page = 1;
 var key = "";
 var maxPage = 0;
+var isFinished = true;
 
 function initial(k) {
     key = k;
@@ -12,9 +13,9 @@ function initial(k) {
         var windowHeight = document.body.clientHeight; // 当前屏幕上页面的高度
         var docHeight = $(document).height(); // 文档的高度
 // 表示，如果滑到距离底部将近50px的时候，开始触发事件
-        if (docHeight - (scrollTop + windowHeight) < 50) {
-            console.log("page:"+page);
-            if (page <= maxPage) {
+        if (docHeight - (scrollTop + windowHeight) < 5) {
+            if (page <= maxPage && isFinished) {
+                isFinished = false;
                 search();
             }
 // do something
@@ -79,6 +80,7 @@ function search() {
                 $("#searchResult").append(str);
                 $("#currentPage").html(page);
                 page++;
+                isFinished = true;
             }
         }
     )

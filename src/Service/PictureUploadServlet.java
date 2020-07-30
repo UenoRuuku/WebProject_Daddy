@@ -48,14 +48,17 @@ public class PictureUploadServlet extends HttpServlet {
         String city = request.getParameter("city");
         String detail = request.getParameter("detail");
         Part part = request.getPart("file");
+        System.out.println(part);
+
         String name = part.getHeader("content-disposition");
         String str = name.substring(name.lastIndexOf("."), name.length() - 1);
-        if(!str.equals("jpg") && !str.equals("jpeg") && !str.equals("gif")){
+        if(!str.equals(".jpg") && !str.equals(".jpeg") && !str.equals(".png")){
             Cookie cookie = new Cookie("upload","wrongFileType");
             cookie.setPath("/");
             cookie.setMaxAge(-1);
             response.addCookie(cookie);
-            response.sendRedirect("/Picture/pictureUpload");
+            response.sendRedirect("Picture/pictureUpload.jsp");
+            return;
         }
         String root = request.getServletContext().getRealPath("/assets/picRepo");
         String filesqlName = UUID.randomUUID().toString() + str;

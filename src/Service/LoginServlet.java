@@ -31,8 +31,8 @@ public class LoginServlet extends HttpServlet {
         String sql = "select * from user where username='" + username + "';";
         Cookie cookie1;
         Cookie cookie2;
-        Cookie cookie4 = new Cookie("loginUser",username);
-        cookie4.setMaxAge(60*60*24*30);
+        Cookie cookie4 = new Cookie("loginUser", username);
+        cookie4.setMaxAge(60 * 60 * 24 * 30);
         cookie4.setPath("/");
         response.addCookie(cookie4);
         try {
@@ -50,13 +50,14 @@ public class LoginServlet extends HttpServlet {
                     response.addCookie(cookie1);
                     response.addCookie(cookie2);
                     response.sendRedirect("index.jsp");
+
                 } else {
                     cookie1 = new Cookie("login", "false");
                     cookie1.setMaxAge(-1);
                     cookie1.setPath("/");
                     response.addCookie(cookie1);
                     Cookie cookie3 = new Cookie("register", "true");
-                    cookie3.setMaxAge(0);
+                    cookie3.setMaxAge(-1);
                     cookie3.setPath("/");
                     response.addCookie(cookie3);
                     response.sendRedirect("Auth/auth.jsp");
@@ -67,7 +68,7 @@ public class LoginServlet extends HttpServlet {
                 cookie1.setPath("/");
                 response.addCookie(cookie1);
                 Cookie cookie3 = new Cookie("register", "true");
-                cookie3.setMaxAge(0);
+                cookie3.setMaxAge(-1);
                 cookie3.setPath("/");
                 response.addCookie(cookie3);
                 response.sendRedirect("Auth/auth.jsp");
