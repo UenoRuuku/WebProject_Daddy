@@ -26,6 +26,7 @@ function deletePic(num) {
             type: "POST",
             dataType: "JSON",
             success: function (data) {
+                location.reload();
             }
         }
     )
