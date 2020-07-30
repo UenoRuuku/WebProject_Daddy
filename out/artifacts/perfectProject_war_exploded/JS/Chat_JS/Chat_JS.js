@@ -6,10 +6,11 @@ function put(username) {
             data: {
                 action:"put",
                 username: username,
-                content:encodeURI(content)
+                content:content
             },
             type: "POST",
             dataType: "JSON",
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
             success: function (data) {
             }
         }
@@ -25,9 +26,10 @@ function get() {
             },
             type: "POST",
             dataType: "TEXT",
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
             success: function (data) {
                 console.log(data);
-                $("#chat").html(decodeURIComponent(data))
+                $("#chat").html(data)
             }
         }
     )

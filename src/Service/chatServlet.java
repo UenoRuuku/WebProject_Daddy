@@ -27,6 +27,8 @@ public class chatServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String action = request.getParameter("action");
         StringBuilder anwser = new StringBuilder();
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("UTF-8");
         System.out.println("doPost");
         switch (action) {
             case "get":
@@ -40,12 +42,11 @@ public class chatServlet extends HttpServlet {
                 response.getWriter().write(anwser.toString());
                 break;
             case "put":
-                String content = URLEncoder.encode(request.getParameter("content"), "UTF-8");
+                String content = request.getParameter("content");
 
                 String user = request.getParameter("username");
                 String time = String.valueOf(new Date().getTime());
                 chatList.add(new Chat(content, user, time));
-                System.out.println("put");
                 break;
             default:
                 break;

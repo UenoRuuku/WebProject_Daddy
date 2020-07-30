@@ -24,7 +24,7 @@
         List<PictureSketchy> hp = new ArrayList<>();
         List<PictureSketchy> lp = new ArrayList<>();
         String sql = "SELECT * FROM picture ORDER BY count desc LIMIT 3;";
-        String sql2 = "SELECT * FROM picture ORDER BY picture_date desc, picture_ID desc LIMIT 10;";
+        String sql2 = "SELECT * FROM picture ORDER BY picture_date desc, picture_ID desc LIMIT 5;";
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
@@ -156,14 +156,14 @@
             <br/>
             <div id="home-nav" class="container">
                 <div class="row">
-                    <div class="col-2 home-tab">
-                        <span>你的收藏</span>
+                    <div onclick="window.location.href='Chat/Chat.jsp'" class="col-2 home-tab">
+                        <span>聊天室</span>
                     </div>
-                    <div class="col-2 home-tab">
+                    <div onclick="window.location.href='Picture/pictureSearchResult.jsp?searchFor='" class="col-2 home-tab">
                         <span>最热门</span>
                     </div>
                     <div class="col-2 home-tab">
-                        <span>最新上传</span>
+                        <span></span>
                     </div>
                     <div class="col-4 home-tab-disabled"></div>
                     <div id="logout-button" class="col-2 home-tab-disabled"></div>
